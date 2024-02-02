@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetData extends MakeData {
+public class FileReader extends DataBuilder {
     public String getURL(int myNumber) {
         Map<Integer, String> myList = new HashMap<Integer,String>();
         myList.put(1, "home.html");
@@ -22,7 +22,7 @@ public class GetData extends MakeData {
         File myHtml = new File(url);
         String body;
         try(
-                Reader rd = new FileReader(myHtml);
+                Reader rd = new java.io.FileReader(myHtml);
                 BufferedReader br = new BufferedReader(rd)
         ) {
             String data;

@@ -1,10 +1,9 @@
 package net.javafullstack.Common;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-public class ShowDetail extends GetData {
+public class DetailView extends FileReader {
     List post;
     String[] title = {"제목","내용","작성자","작성일"};
 

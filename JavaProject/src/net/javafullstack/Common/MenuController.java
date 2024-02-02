@@ -2,8 +2,8 @@ package net.javafullstack.Common;
 
 import java.util.*;
 
-public class CommonUtil {
-    public int displayMenu1() {
+public class MenuController {
+    public int displayMenu() {
         String[] arrMenu1 = {"1 : Home", "2 : About Me", "3 : Posts", "4 : Contact", "5 : LogIn"};
         int menuNo = 0;
         do {

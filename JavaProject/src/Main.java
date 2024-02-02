@@ -1,6 +1,6 @@
-import net.javafullstack.Common.CommonUtil;
-import net.javafullstack.Common.GetData;
-import net.javafullstack.Common.ShowDetail;
+import net.javafullstack.Common.MenuController;
+import net.javafullstack.Common.FileReader;
+import net.javafullstack.Common.DetailView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,9 +11,9 @@ public class Main {
         play();
     }
     public static void play() {
-        CommonUtil commonUtil = new CommonUtil();
-        GetData getData = new GetData();
-        ShowDetail showDetail = new ShowDetail();
+        MenuController menuController = new MenuController();
+        FileReader fileReader = new FileReader();
+        DetailView detailView = new DetailView();
 
         int myNumber = 0;
         int restartYN = 0;
@@ -22,12 +22,12 @@ public class Main {
         String myBody = "";
         Map dataMap = new HashMap<>();
 
-        myNumber = commonUtil.displayMenu1();
-        myURL = getData.getURL(myNumber);
-        myBody = getData.showURL(myURL, myNumber);
-        dataMap = getData.retunMyData(myNumber,myBody);
-        showDetail.showPage(myNumber,dataMap);
-        restartYN = commonUtil.getInputRestart();
+        myNumber = menuController.displayMenu();
+        myURL = fileReader.getURL(myNumber);
+        myBody = fileReader.showURL(myURL, myNumber);
+        dataMap = fileReader.retunMyData(myNumber,myBody);
+        detailView.showPage(myNumber,dataMap);
+        restartYN = menuController.getInputRestart();
         if(restartYN == 1) {play();}
     }
 

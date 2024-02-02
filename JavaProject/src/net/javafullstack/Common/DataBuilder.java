@@ -1,9 +1,8 @@
 package net.javafullstack.Common;
 
-import java.io.Reader;
 import java.util.*;
 
-public class MakeData {
+public class DataBuilder {
     Map dataMap = new HashMap<>();
     String key;
     int keyInt;
